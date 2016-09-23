@@ -26,17 +26,17 @@ public class Ex_02
 	    System.out.println("What is your subject?");
 		String subject = kb.next();
 		
-		System.out.println("***************************");
+		System.out.println("************************************");
 		form.ID (school, year);
 		form.ID (first, last);
 		form.ID (title, subject);
-		System.out.println("\n***************************");
+		System.out.println("\n************************************");
 		
 	}
 	
 	public void ID (String word, String number)
 	{
-		System.out.printf("\n*" +"%10s    %15s" + "*", word, number);
+		System.out.printf("\n*" +"%15s    %15s" + "*", word, number);
 	}
 	
 }

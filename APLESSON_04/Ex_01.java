@@ -34,7 +34,7 @@ public class Ex_01
 		String Tax = "Tax";
 		String Total = "Total";
 		
-			     System.out.println("\n<<<<<<___RECEIPT___>>>>>>>");
+			     System.out.println("\n <<<<<<<<<<<<<___RECEIPT___>>>>>>>>>>>>>");
 	
 	
 	   form.format(item1, price1);
@@ -44,8 +44,8 @@ public class Ex_01
 	   form.format(Tax, taxPrice);
 	   form.format(Total, totalPrice);
 	   
-		System.out.println("\n___________________________________");
-		System.out.println("\n* Thank you for your support *");
+		System.out.println("\n_________________________________________");
+		System.out.println("\n         * Thank you for your support *");
 	}	
 	
 	public void format (String item, double price)
