@@ -1,10 +1,16 @@
+import java.util.Scanner;
 public class Rectangle
 {
-	static int length = 3;
-	static int width = 4;
+	static int length;
+	static int width;;
 		
 	public static void main(String[] args)
 	{
+		Scanner kb = new Scanner(System.in);
+		
+		length = kb.nextInt();
+		width = kb.nextInt();
+		calcPerim();
 		print();
 		
 	}

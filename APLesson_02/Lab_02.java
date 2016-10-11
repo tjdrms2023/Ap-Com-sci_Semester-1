@@ -10,11 +10,13 @@ class Lab_02
 		
 		String Name = "Seong Geun Cho";
 		String Address = "12640 Torrey Bluff #16";
-		String City = "San Deigo";
+		String City = "San Diego";
 		int zipCode = 92130;
+		String State = "california";
 		
-		System.out.println ("Full address: " + Address + City + zipCode);
-		System.out.println ("Resident: " + Name);
+		System.out.println (Name);
+		System.out.println (Address);
+		System.out.println (City +", "+  State + " " +  zipCode);
 		
 		int Length = 10;
 		int Height = 9;

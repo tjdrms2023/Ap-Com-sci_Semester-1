@@ -25,7 +25,7 @@ public class Ex_03
 		
 		
 		System.out.printf ("Your total monthly payment is $ %10.2f" ,result / 12);
-		System.out.printf ("\nYour total yearly payment is $ %10.2f ",result);
+		System.out.printf ("\nYour total yearly payment is $ %10.2f",result);
 		
 		
 	}
