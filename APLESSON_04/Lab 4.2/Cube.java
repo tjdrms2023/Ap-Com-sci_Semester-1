@@ -1,20 +1,26 @@
+import java.util.Scanner;
 public class Cube
 {
-	static int side = 5;
-	static int sa = calcSurf();
+	static double side;
+	static double sa;
 	
 	public static void main(String[] args)
 	{
+		Scanner kb = new Scanner(System.in);
+		System.out.println("Side?");
+		side = kb.nextDouble();
+		calcSurf();
 		print();
 	}
 	
-	public static int calcSurf()
+	public static void calcSurf()
 	{
-		return 6 * side * side;
+		sa = 6 * side * side;
 	}
 	
 	public static void print()
 	{
+
 		System.out.println("\"The surface are of a cube with " +side+ "is " + sa + ".");
 	}
 }
