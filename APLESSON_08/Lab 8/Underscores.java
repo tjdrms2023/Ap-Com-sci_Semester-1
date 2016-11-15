@@ -11,7 +11,7 @@ public class Underscores
 		System.out.println(replace(sentence));
 	}
 	
-	static String replace(String sentence)
+	public static String replace(String sentence)
 	{
 		if(sentence.indexOf(" ") < 0)
 			return sentence;

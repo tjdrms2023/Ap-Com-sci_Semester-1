@@ -17,13 +17,18 @@ public class Center
 		
 		System.out.println("Third: ");
 		t = kb.nextLine();
-		makeCenter
+		
+		makeCenter(f);
+		makeCenter(s);
+		makeCenter(t);
 	}
 	
-	public static makeCenter(String sen)
+	public static String makeCenter(String sen)
 	{
-		if(word.length(sen) >= 20)
-			return word;
-		
+		sen = " ";
+		if(sen.length() >= 20)
+			return sen;
+		else
+			return sen = " " + sen + " ";
 	}
 }
