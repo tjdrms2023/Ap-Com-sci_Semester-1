@@ -10,7 +10,7 @@ public class Lucky7s
 		
 		System.out.println("Number: ");
 		num = kb.nextInt();
-		System.out.println(luck(num));
+		System.out.println(luck(num)) ;
 	}
 	
 	public static int luck(int number)
@@ -19,9 +19,13 @@ public class Lucky7s
 		if (number > 0)
 		{
 			if (number % 10 == 7)
-				return 1 + number / 10;
+			{
+				return 1 + luck(number / 10);
+			}
 			else
-				return 0 + number / 10;
+			{
+				return 0 + luck(number / 10);
+			}		
 		}
 		
 		else
