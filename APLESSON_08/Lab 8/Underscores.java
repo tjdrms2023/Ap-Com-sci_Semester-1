@@ -15,6 +15,6 @@ public class Underscores
 	{
 		if(sentence.indexOf(" ") < 0)
 			return sentence;
-			return sentence = sentence.substring(0, sentence.indexOf(" ")) + "_" + sentence.substring(sentence.indexOf(" ") + 1);  
+			return replace(sentence.substring(0, sentence.indexOf(" ")) + "_" + sentence.substring(sentence.indexOf(" ") + 1));  
 	}
 }
