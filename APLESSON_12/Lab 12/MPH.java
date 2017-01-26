@@ -36,7 +36,7 @@ public class MPH
 	//accessor
 	public double getMPH()
 	{
-		mph = Math.round(distance / (hours + minutes / 60.0));
+		mph = Math.round(distance / ((hours + minutes) / 60.0));
 		return mph;
 	}
 }
