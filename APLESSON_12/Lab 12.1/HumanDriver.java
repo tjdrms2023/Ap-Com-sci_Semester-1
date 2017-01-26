@@ -14,11 +14,9 @@ public class HumanDriver
 		
 		Human object = new Human(hair,eyes,skin);
 	
-		System.out.printf("My info...%nHair: %s%nEyes: %s%nSkin: %s%n",object.getHair(),object.getEyes(),object.getSkin());
-		
+		System.out.println("My info... \nHair: " + object.getHair() + "\nEyes: " + object.getEyes() + "\nSkin: " + object.getSkin());
 		object.setHES("brown","blue","pale");
-		System.out.printf("Friend's info...%nHair: %s%nEyes: %s%nSkin: %s%n",object.getHair(),object.getEyes(),object.getSkin());
-
+        System.out.println("Friend's info... \nHair: " + object.getHair() + "\nEyes: " + object.getEyes() + "\nSkin: " + object.getSkin());
 		
 		
 		

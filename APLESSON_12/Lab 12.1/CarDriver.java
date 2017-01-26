@@ -16,9 +16,10 @@ public class CarDriver
 		
 		Car object = new Car(paint, interior,engine,tires);
 	
-		System.out.printf("Paint:\t %s%n Interior:\t %s%n 
-		System.out.printf("Paint:\t %s%n Interior:\t %s%n 
-		
+		System.out.println("Paint: "+ object.getPaint());
+		System.out.println("Interior: " + object.getInterior());
+		System.out.println("Engine: " + object.getEngine());
+		System.out.println("Tires: " + object.getTires());
 		
 	}
 }

@@ -25,10 +25,6 @@ public class Inventory
 	
 	public String toString()
 	{
-		return "Item Info...\nName: " + name +
-								"\nManufacturer: " + manufacturer +
-								"\nCategory: " + category +
-								"\nPrice: $" + price +
-								"\nUPC:" + UPC;
+		return "Item Info...\nName: " + name + "\nManufacturer: " + manufacturer + "\nCategory: " + category + "\nPrice: $" + price + "\nUPC:" + UPC;
 	}
 }
