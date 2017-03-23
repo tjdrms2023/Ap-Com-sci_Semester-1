@@ -1,7 +1,7 @@
 //1 string paramter that contains the coordinates.
 //split()
 
-public class Toyota implements Location
+public class Toyota implements Car
 {
 	private double xSide;
 	private double ySide;
@@ -17,6 +17,7 @@ public class Toyota implements Location
 		location = new String [1];
 	}
 	
+	/*
 	public int getID()
 	{
 		return (int)(Math.random() * 100000) + 1;
@@ -36,4 +37,5 @@ public class Toyota implements Location
 		
 		return location;
 	}
+	*/
 }

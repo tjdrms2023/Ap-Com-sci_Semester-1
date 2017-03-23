@@ -1,4 +1,4 @@
-public class Honda implements Location
+public class Honda implements Car
 {
 	private double xSide;
 	private double ySide;
@@ -14,11 +14,12 @@ public class Honda implements Location
 		location = new String [1];
 	}
 	
+	
 	public int getID()
 	{
 		return (int)(Math.random() * 100000) + 1;
 	}
-	
+	/*
 	public void move(double x, double y)
 	{
 		xSide += x;
@@ -33,4 +34,5 @@ public class Honda implements Location
 		
 		return location;
 	}
+	*/
 }

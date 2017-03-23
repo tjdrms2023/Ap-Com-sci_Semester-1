@@ -1,4 +1,4 @@
-public class GMC implements Location
+public class GMC implements interface Car
 {
 	private double xSide;
 	private double ySide;
@@ -15,6 +15,7 @@ public class GMC implements Location
 		ySide = y;
 	}
 	
+	/*
 	public int getID()
 	{
 		return (int)(Math.random() * 100000) + 1;
@@ -34,4 +35,5 @@ public class GMC implements Location
 		
 		return location;
 	}
+	*/
 }
