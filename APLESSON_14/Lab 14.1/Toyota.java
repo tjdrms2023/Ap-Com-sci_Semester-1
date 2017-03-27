@@ -1,18 +1,20 @@
-public class GMC implements Car
+//1 string paramter that contains the coordinates.
+//split()
+
+public class Toyota implements Car
 {
 	private double xSide;
 	private double ySide;
+	private String location[];
 	
-	public GMC()
+	public Toyota()
 	{
-		xSide = 0;
-		ySide = 0;
+		location = new String [1];
 	}
 	
-	public GMC(double x, double y)
+	public Toyota(String loc)
 	{
-		xSide = x;
-		ySide = y;
+		location = new String [1];
 	}
 	
 	/*

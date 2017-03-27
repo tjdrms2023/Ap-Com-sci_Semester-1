@@ -1,26 +1,25 @@
-public class GMC implements Car
+public class Honda implements Car
 {
 	private double xSide;
 	private double ySide;
+	private String location[];
 	
-	public GMC()
+	public Honda()
 	{
-		xSide = 0;
-		ySide = 0;
+		location = new String [1];
 	}
 	
-	public GMC(double x, double y)
+	public Honda(double loc[])
 	{
-		xSide = x;
-		ySide = y;
+		location = new String [1];
 	}
 	
-	/*
+	
 	public int getID()
 	{
 		return (int)(Math.random() * 100000) + 1;
 	}
-	
+	/*
 	public void move(double x, double y)
 	{
 		xSide += x;

@@ -1,11 +1,13 @@
-import java.util.Random;
+import static java.lang.Math.*;
 public abstract class Ticket
 {
-	int serialNo;
+	private int serialNo;
+	private int price;
 	
 	public Ticket()
 	{
-		serialNo = (int)(Math.random() * 1000000 + 1);
+		price = 0;
+		serialNo = (int)(Math.random() * 9999999 + 1);
 	}
 	
 	public int getSerialNo()

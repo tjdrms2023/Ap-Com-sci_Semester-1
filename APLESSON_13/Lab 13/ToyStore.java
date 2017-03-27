@@ -15,21 +15,21 @@ public class ToyStore
 		loadToys(toy);
 	}
 	
-	public void loadToys(String toy)
+	public void loadToys(String ts)
 	{
-		ArrayList<String> toys = new ArrayList<String>(Arrays.asList(toy.split(", ")));
+		ArrayList<String> toys = new ArrayList<String>(Arrays.asList(ts.split(", ")));
 		toyList = new ArrayList<>();
-		for(int i = 0; i < toyList.size(); i+=2)
+		for(int i = 0; i < toys.size(); i+=2)
 		{
 			String name = toys.get(i);
 			String type = toys.get(i+1);
-			Toy t = getThatToy(name);
+			Toy t = this.getThatToy(name);
 			
 			if(t == null)
 			{
 				if(type.equalsIgnoreCase("Car"))
 					toyList.add(new Car(name));
-				if(type.equalsIgnoreCase("AF"))
+				else if(type.equalsIgnoreCase("AF"))
 					toyList.add(new AFigure(name));
 			}
 			else
@@ -56,11 +56,11 @@ public class ToyStore
 		String name = "";
 		int max = Integer.MIN_VALUE;
 		
-		for(Toy t: toyList)
+		for(Toy object: toyList)
 		{
-			if (max < t.getCount())
-				max = t.getCount();
-				name = t.getName();
+			if (max < object.getCount())
+				max = object.getCount();
+				name = object.getName();
 		}
 		
 		return name;
@@ -71,11 +71,11 @@ public class ToyStore
 		int cars = 0;
 		int figures = 0;
 		
-		for(Toy t: toyList)
+		for(Toy object: toyList)
 		{
-			if(t.getType().equalsIgnoreCase("Car"))
+			if(object.getType().equalsIgnoreCase("Car"))
 				cars++;
-			if(t.getType().equalsIgnoreCase("AF"))
+			if(object.getType().equalsIgnoreCase("AF"))
 				figures++;
 		}
 		
