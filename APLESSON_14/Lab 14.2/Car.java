@@ -9,7 +9,7 @@ public abstract class Car implements Location
 		x = 0;
 		y = 0;
 		ID = (int)(Math.random() * 999999) + 1;
-		location = new double [1];
+		location = new double [2];
 	}
 	
 	

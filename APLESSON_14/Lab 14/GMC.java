@@ -1,24 +1,19 @@
-public class GMC implements Car
+public class GMC implements Location
 {
 	private double xSide;
 	private double ySide;
-	
-	public GMC()
-	{
-		xSide = 0;
-		ySide = 0;
-	}
+	private int ID;
 	
 	public GMC(double x, double y)
 	{
 		xSide = x;
 		ySide = y;
+		ID = (int)(Math.random()*999999)+1;
 	}
 	
-	/*
 	public int getID()
 	{
-		return (int)(Math.random() * 100000) + 1;
+		return ID;
 	}
 	
 	public void move(double x, double y)
@@ -35,5 +30,4 @@ public class GMC implements Car
 		
 		return location;
 	}
-	*/
 }

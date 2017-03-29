@@ -1,25 +1,22 @@
-public class Honda implements Car
+public class Honda implements Location
 {
+	private int ID;
 	private double xSide;
 	private double ySide;
-	private String location[];
-	
-	public Honda()
-	{
-		location = new String [1];
-	}
+	private double location[];
 	
 	public Honda(double loc[])
 	{
-		location = new String [1];
+		xSide = loc[0];
+		ySide = loc[1];
+		ID = (int)(Math.random() * 999999) + 1;
 	}
-	
 	
 	public int getID()
 	{
-		return (int)(Math.random() * 100000) + 1;
+		return ID;
 	}
-	/*
+
 	public void move(double x, double y)
 	{
 		xSide += x;
@@ -28,11 +25,10 @@ public class Honda implements Car
 	
 	public double[] getLoc()
 	{
-		double[] location = new double [2];
+		location = new double [2];
 		location[0] = xSide;
 		location[1] = ySide;
 		
 		return location;
 	}
-	*/
 }
