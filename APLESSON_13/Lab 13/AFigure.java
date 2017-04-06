@@ -1,7 +1,5 @@
 public class AFigure extends Toy
 {
-	private String name;
-	
 	public AFigure()
 	{
 		super();
@@ -14,7 +12,7 @@ public class AFigure extends Toy
 	
 	public String getType()
 	{
-		return "Action Figure";
+		return "AF";
 	}
 }
 

@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class ToyStore
 {
-	ArrayList<Toy> toyList = new ArrayList<Toy>();
+	static ArrayList<Toy> toyList = new ArrayList<Toy>();
 	
 	public ToyStore()
 	{
@@ -23,7 +23,7 @@ public class ToyStore
 		{
 			String name = toys.get(i);
 			String type = toys.get(i+1);
-			Toy t = this.getThatToy(name);
+			Toy t = getThatToy(name);
 			
 			if(t == null)
 			{
@@ -41,11 +41,11 @@ public class ToyStore
 	
 	public Toy getThatToy(String nm)
 	{
-		for(Toy t : toyList)
+		for(Toy toy : toyList)
 		{
-			if(t.getName().equalsIgnoreCase(nm))
+			if(toy.getName().equalsIgnoreCase(nm))
 			{
-				return t;
+				return toy;
 			}
 		}
 		return null;
@@ -56,11 +56,11 @@ public class ToyStore
 		String name = "";
 		int max = Integer.MIN_VALUE;
 		
-		for(Toy object: toyList)
+		for(Toy toy: toyList)
 		{
-			if (max < object.getCount())
-				max = object.getCount();
-				name = object.getName();
+			if (max < toy.getCount())
+				max = toy.getCount();
+				name = toy.getName();
 		}
 		
 		return name;
@@ -82,7 +82,7 @@ public class ToyStore
 		if(cars > figures)
 			return "Cars";
 	    
-		if(figures > cars)
+		else if(figures > cars)
 			return "Action Figures";
 		else
 			return "Equal amounts of action figures and cars!";

@@ -11,7 +11,7 @@ public abstract class Toy
 	
 	public Toy (String n)
 	{
-		this.name = n;
+		name = n;
 		count = 1;
 	}
 	
@@ -29,12 +29,12 @@ public abstract class Toy
     //Modifiers
 	public void setName(String n)
 	{
-		this.name = n;
+		name = n;
 	}
 	
 	public void setCount(int c)
 	{
-		this.count = c;
+		count = c;
 	}
 	
 	public abstract String getType();

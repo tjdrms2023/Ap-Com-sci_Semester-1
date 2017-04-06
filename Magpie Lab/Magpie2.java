@@ -14,6 +14,11 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = "";
+		
+		if (statement.length() == 0)
+		{
+			response = "Say something, please.";
+		}
 
 		/** Exercise_01:
 		 * ==================================================
@@ -68,7 +73,7 @@ public class Magpie2
 		   startPos
 
 			-->Refinement: Make sure we find goal by itself, and not part
-			of another word ("no" vs no in "know"). if you find an occurrence
+			of another word ("no" vs no in "know"). If you find an occurrence
 			of goal, make sure before and after aren't letters.
 
 			As long as psn >= 0...
@@ -76,14 +81,30 @@ public class Magpie2
 				beginning of the word
 					set before = the slot in phrase before psn */
 
-				//====>code here
+				String phrase = statement.trim().toLowerCase();
+				int psn = phrase.indexOf(goal, startPos);
+				
+				while (psn >= 0)
+				{
+					if (psn > 0)
+					{
+						before = phrase.subString(psn-1, psn);
+					}
+
+				
 
 				/*check if you can fit goal into the rest of phrase - no need to
 				proceed otherwise
 					set after = the slot in phrase after psn + length of goal */
 
-				//=====> code here
-
+				    if ()
+					{
+						after = phrase.subString(psn + goal.length(), psn);
+					}
+					if ((before.compareTo("a") < 0)|| (before.compareTo("z") > 0) && (after.compareTo("a") < 0||(after.compareTo("z"))
+					{
+						return psn;
+					}
 				/* if before and after are not letters (compare before to "a"
 					and after to "z")
 						--return psn
