@@ -46,21 +46,22 @@ public class ToyStore
 			if(toy.getName().equalsIgnoreCase(nm))
 			{
 				return toy;
-			}
+			}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 		}
 		return null;
 	}
 	
 	public String getMostFrequentToy()
 	{
-		String name = "";
+		String name = " ";
 		int max = Integer.MIN_VALUE;
 		
 		for(Toy toy: toyList)
 		{
-			if (max < toy.getCount())
+			if (max < toy.getCount()){
 				max = toy.getCount();
 				name = toy.getName();
+			}
 		}
 		
 		return name;

@@ -1,7 +1,7 @@
 //1 string paramter that contains the coordinates.
 //split()
 
-public class Toyota implements Car
+public class Toyota extends Car
 {
 	private double xSide;
 	private double ySide;
