@@ -5,7 +5,7 @@ public class Magpie2
 	{
 		return "Hello, let's talk.";
 	}
-	
+	  
 	/** getResponse() method
 	 * ===========================================
 	 * 	Gives a response to a user statement
