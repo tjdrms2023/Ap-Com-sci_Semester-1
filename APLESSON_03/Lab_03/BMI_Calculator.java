@@ -17,7 +17,5 @@ public class BMI_Calculator
 		double result = weight / height;
 		
 		System.out.println("All set! Your BMI is..." + result);
-		
-		
 	}
 }
