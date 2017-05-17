@@ -1,9 +1,10 @@
+import java.util.*;
 public class Honda extends Car
 {
 	public Honda(double loc[])
 	{
 		super();
-		this.move(loc[0],loc[1]);
+		super.move(loc[0],loc[1]);
 	}
 	/*
 	private double xSide;
