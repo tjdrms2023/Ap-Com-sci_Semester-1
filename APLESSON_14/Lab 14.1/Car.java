@@ -1,7 +1,7 @@
+import java.util.*;
 public abstract class Car implements Location
 {
 	private double x,y;
-	private double location[];
 	public int ID;
 	
 	public Car()
@@ -9,7 +9,6 @@ public abstract class Car implements Location
 		x = 0;
 		y = 0;
 		ID = (int)(Math.random() * 999999) + 1;
-		location = new double [1];
 	}
 	
 	
