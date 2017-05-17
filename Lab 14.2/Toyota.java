@@ -1,11 +1,14 @@
 //1 string paramter that contains the coordinates.
 //split()
 
+import java.util.*;
 public class Toyota extends Car
 {
-	public Toyota(String loc){
+	public Toyota(String pos){
 		super();
-		this.move(Double.parseDouble(loc.split(", ")[0]), Double.parseDouble(loc.split(", ")[1]));
+		String[] posV = pos.split(", ");
+		this.move(Double.parseDouble(posV[0]),Double.parseDouble(posV[1]));
+		super.move(Double.parseDouble(posV[0]),Double.parseDouble(posV[1]));
 	}
 	/*
 	private double xSide;
