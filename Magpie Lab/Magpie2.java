@@ -1,133 +1,150 @@
 public class Magpie2
 {
-	/** Get a default greeting @return a greeting*/
 	public String getGreeting()
 	{
 		return "Hello, let's talk.";
 	}
-	  
-	/** getResponse() method
-	 * ===========================================
-	 * 	Gives a response to a user statement
-	 *  @param statement (the user statement)
-	 * 	@return a response based on the rules given */
+	
 	public String getResponse(String statement)
 	{
 		String response = "";
+		statement = statement.toLowerCase().trim();
 		
-		if (statement.length() == 0)
-		{
-			response = "Say something, please.";
+		if (statement.length()==0){
+			return "Say something, please.";
 		}
 
-		/** Exercise_01:
-		 * ==================================================
-		 * 	Code that asks the user "Say something, please."
-		 * 	if you enter nothing, or if you accidentally hit
-		 * 	enter. Think to yourself: "What is the length of
-		 * 	an empty String?" */
-
-
-		/** To be completed in Exercise_02:
-		 * 	Modify the following code to use the findKeyword
-		 * 	Method (details in "Exercise_02" below. */
-		if (statement.indexOf("no") >= 0)
+		if (findKeyword(statement,"no") >= 0)
 		{
-			response = "Why so negative?";
+			return "Why so negative?";
 		}
 
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+		else if (findKeyword(statement,"mother") >= 0
+				|| findKeyword(statement,"father") >= 0
+				|| findKeyword(statement,"sister") >= 0
+				|| findKeyword(statement,"brother") >= 0)
 		{
-			response = "Tell me more about your family.";
+			return "Tell me more about your family.";
 		}
 
-		/** Exercise_03(Final)
-		 * ==================================================
-		 * Create additional code (another else if) that
-		 * responds "Tell me more about your pet" if the
-		 * user mentions the word cat, dog, fish, or turtle
-		 * in their statement.
-		 *
-		 * Create addtional code (another else if) that
-		 * responds "He sounds like a pretty dank teacher"
-		 * if you mention "Robinette" in your statement */
-
-		else
+		else if (findKeyword(statement,"cat") >= 0
+				|| findKeyword(statement,"dog") >= 0
+				|| findKeyword(statement,"fish") >= 0
+				|| findKeyword(statement,"turtle") >= 0)
 		{
-			response = getRandomResponse();
+			return "Tell me more about your pets.";
 		}
+		
+		else if (findKeyword(statement,"robinette") >= 0)
+		{
+			return "Sounds like a dank teacher.";
+		}
+
+		else if (findKeyword(statement, "i want to", 0) >= 0)
+		{
+			return transformIWantToStatement(statement);
+		}
+		
+		else if (findKeyword(statement, "i", 0) >= 0)
+		{
+			int psnYou = findKeyword(statement, "you", 0);
+			
+			if(psnYou >= findKeyword(statement, "i", psnYou)){
+				return transformIYouStatement(statement);
+			}
+		}
+		
+		else{
+			int psn = findKeyword(statement, "you", 0);
+
+			if (psn >= 0 && findKeyword(statement, "me", psn) >= 0)
+			{
+				return transformYouMeStatement(statement);
+			}
+			}
+		
+		response = getRandomResponse();
 		return response;
+		}
+		
+	private String transformIWantToStatement(String statement)
+	{
+		statement = statement.toLowerCase().trim();
+		String lastChar = statement.substring(statement.length()-1, statement.length());
+		
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement.length() - 1);
+		}
+		
+		statement.trim();
+		int psn = findKeyword(statement,"i want to");
+		String restOfStatement = statement.substring(psn+1);
+		
+		return "What would it mean to" + restOfStatement + "?";
 	}
 
-	/** Ex_02: The findKeyword() Method...
-	 * ========================================================= */
+	private String transformYouMeStatement(String statement)
+	{
+		statement = statement.toLowerCase().trim();
+		String lastChar = statement.substring(statement.length());
+		if (lastChar.equals("."))
+		{
+			statement.replace(".", " ");
+			statement.trim();
+		}
+		
+		int psnOfYou = findKeyword(statement, "you");
+		int psnOfMe  = findKeyword(statement, "me");
+		
+		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe);
+		
+		return "What makes you think that I " + restOfStatement + "you?";
+	}
+	
+	private String transformIYouStatement(String statement)
+	{
+		statement = statement.toLowerCase().trim();
+		String lastChar = statement.substring(statement.length());
+		
+		if (lastChar.equals("."))
+		{
+			statement.replace(".", " ");
+			statement.trim();
+		}
+		
+		int psnOfI = findKeyword(statement, "I");
+		int psnOfYou  = findKeyword(statement, "you");
+		
+		String restOfStatement = statement.substring(psnOfI+3, psnOfYou);
+		
+		return "Why do you " + restOfStatement + "me?";
+	}
+	
 	private int findKeyword(String statement, String goal, int startPos)
 	{
-		/* New String variable phrase = a more searchable version of statement.
-		 	-Use a combination of trim() and toLowerCase() modify statement.
-
-		   New int variable psn = the location of goal in phrase after
-		   startPos
-
-			-->Refinement: Make sure we find goal by itself, and not part
-			of another word ("no" vs no in "know"). If you find an occurrence
-			of goal, make sure before and after aren't letters.
-
-			As long as psn >= 0...
-				Check if psn > 0 - there is no need to check for before at the
-				beginning of the word
-					set before = the slot in phrase before psn */
-
-				String phrase = statement.trim().toLowerCase();
-				int psn = phrase.indexOf(goal, startPos);
-				
-				while (psn >= 0)
-				{
-					if (psn > 0)
-					{
-						before = phrase.subString(psn-1, psn);
-					}
-
-				
-
-				/*check if you can fit goal into the rest of phrase - no need to
-				proceed otherwise
-					set after = the slot in phrase after psn + length of goal */
-
-				    if ()
-					{
-						after = phrase.subString(psn + goal.length(), psn);
-					}
-					if ((before.compareTo("a") < 0)|| (before.compareTo("z") > 0) && (after.compareTo("a") < 0||(after.compareTo("z"))
-					{
-						return psn;
-					}
-				/* if before and after are not letters (compare before to "a"
-					and after to "z")
-						--return psn
-
-				Otherwise, search for goal in phrase from psn + 1 forward */
-
+		String phrase = statement.trim();
+		phrase = " " + phrase.toLowerCase() + " ";
+			
+		int psn = phrase.indexOf(goal,startPos);
+		int before,after;
+			if (psn>=0){
+				before = psn-1;
+				after = psn+goal.length();
+		
+				if (phrase.substring(before, before+1).equals(" ") && phrase.substring(after, after+1).equals(" ")){
+					return psn - 1;
+				}	
+			}
 		return -1;
-
 	}
+	
+	private int findKeyword(String statement, String goal){
 
-	/** Override - this method is used if there are only 2 parameters...*/
-	private int findKeyword(String statement, String goal)
-	{
-		//set startPos to 0 if not specified
 		return findKeyword(statement, goal, 0);
 	}
 
-	/** getRandomResponse() method
-	 * =============================================================*/
-	/** Pick a default response to use if nothing else fits.
-	 * 	@return a non-committal string*/
-	private String getRandomResponse()
-	{
+	private String getRandomResponse(){
 		final int NUMBER_OF_RESPONSES = 4;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
