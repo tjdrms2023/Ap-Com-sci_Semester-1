@@ -32,7 +32,7 @@ public class Magpie2
 				|| findKeyword(statement,"fish") >= 0
 				|| findKeyword(statement,"turtle") >= 0)
 		{
-			return "Tell me more about your pets.";
+			return "Tell me more about your pet.";
 		}
 		
 		else if (findKeyword(statement,"robinette") >= 0)
@@ -79,7 +79,7 @@ public class Magpie2
 		
 		statement.trim();
 		int psn = findKeyword(statement,"i want to");
-		String restOfStatement = statement.substring(psn+1);
+		String restOfStatement = statement.substring(psn+9);
 		
 		return "What would it mean to" + restOfStatement + "?";
 	}
