@@ -3,6 +3,7 @@ public abstract class Car implements Location
 {
 	private double x,y;
 	public int ID;
+	public double [] location;
 	
 	public Car()
 	{
