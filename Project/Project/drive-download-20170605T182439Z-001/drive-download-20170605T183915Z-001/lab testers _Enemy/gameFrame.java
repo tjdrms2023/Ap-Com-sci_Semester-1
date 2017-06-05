@@ -16,6 +16,7 @@ public class gameFrame extends JFrame implements KeyListener,Runnable
 	boolean KeyDown = false;
 	boolean KeyLeft = false;
 	boolean KeyRight = false;
+	boolean KeySpace = false;
 	
 	int cnt;
 	Thread th;	
@@ -102,7 +103,7 @@ public class gameFrame extends JFrame implements KeyListener,Runnable
 	
 	public void EnemyProcess()
 	{
-		for(int =0; i <EnemyList.size(); i++)
+		for(int i = 0; i < EnemyList.size(); i++)
 		{
 			en = (Enemy)(EnemyList.get(i));
 			en.move(); 
@@ -111,7 +112,7 @@ public class gameFrame extends JFrame implements KeyListener,Runnable
 				EnemyList.remove(i);
 			}
 		}
-		if( cnt % 300==0)
+		if(cnt % 300==0)
 		{
 			en = new Enemy(width +100, 100);
 			EnemyList.add(en);

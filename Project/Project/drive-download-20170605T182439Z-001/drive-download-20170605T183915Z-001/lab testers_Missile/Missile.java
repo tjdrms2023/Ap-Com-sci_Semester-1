@@ -14,6 +14,6 @@ public class Missile
 	
 	public void move()
 	{
-		pos.y -=30;
+		pos.y -=60;
 	}
 }
