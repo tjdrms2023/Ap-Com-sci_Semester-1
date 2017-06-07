@@ -82,7 +82,8 @@ public class Deck {
 	 * @return the card just dealt, or null if all the cards have been
 	 *         previously dealt.
 	 */
-	public Card deal() {
+	public Card deal() 
+	{
 		size--;
 		Card c = cards.get(size);
 		return c;
